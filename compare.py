@@ -14,7 +14,7 @@ def compare_datasets(doc1: pd.DataFrame, doc2: pd.DataFrame, keys: list):
     # Creating the dataframe that will contains the differences
     diff = pd.DataFrame(columns = ["file1", "file2", "column", "line"])
 
-    # For each column with unequel values
+    # For each column with unequal values
     for column in unequal_columns:
         # Getting a list of all the differences in this column
         samples = comparison.sample_mismatch(column["column"], for_display = True, sample_count = 9999999)
@@ -53,7 +53,7 @@ if not args.file1: print("ERROR: Please, enter the first file you want to compar
 if not args.file2: print("ERROR: Please, enter the second file you want to compare (--file2 or -2)")
 
 print("\nFile #1: {}".format(args.file1))
-print("File #2: {}".format(args.file1))
+print("File #2: {}".format(args.file2))
 
 # Checking the non required arguments
 if args.keys: keys = args.keys.split(",")
